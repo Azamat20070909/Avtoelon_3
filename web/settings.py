@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=0a=jz(y42n014d&_z9(&*#pv)1mk5rxf=ig79p5=)9dv-l#w6'
+SECRET_KEY = 'django-insecure-5755fy2y)dsr*5fo!4fx$*-i2^^cj67cu88$&p=i6qga53h42u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'car',
-    'user']
+    'user',
+
+    'corsheaders'
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'web.urls'
@@ -132,3 +137,5 @@ AUTH_USER_MODEL = 'user.User'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'media'
+
+CORS_ALLOWED_ORIGINS = True
